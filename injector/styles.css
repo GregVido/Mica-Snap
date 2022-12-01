@@ -1,0 +1,18 @@
+:root[theme=light],
+:root[theme=dark] {
+    --sigMain: transparent;
+    --sigObjectDown: transparent;
+}
+
+#change-password-root .full-background-color, #change-password-root .footer, #check-inbox-root .full-background-color, #check-inbox-root .footer, #generic-account-error-root .full-background-color, #generic-account-error-root .footer, #locked-account-sso-error-root .full-background-color, #locked-account-sso-error-root .footer, #login-root .full-background-color, #login-root .footer, #password-root .full-background-color, #password-root .footer, #account-identifier-root .full-background-color, #account-identifier-root .footer, #manage-password-success-root .full-background-color, #manage-password-success-root .footer, #odlv-landing .full-background-color, #odlv-landing .footer, #odlv-verifying .full-background-color, #odlv-verifying .footer, #reauthentication-root .full-background-color, #reauthentication-root .footer, #reset-password-by-phone .full-background-color, #reset-password-by-phone .footer, #reset-password-options-root .full-background-color, #reset-password-options-root .footer, #reset-password-root .full-background-color, #reset-password-root .footer, #reset-password-verify-phone-root .full-background-color, #reset-password-verify-phone-root .footer, #sign-up-root .full-background-color, #sign-up-root .footer, #sign-up-verify-phone-root .full-background-color, #sign-up-verify-phone-root .footer, #tfa-root .full-background-color, #tfa-root .footer, #account-recovery-root .full-background-color, #account-recovery-root .footer, #verify-your-account .full-background-color, #verify-your-account .footer, #phone-verification .full-background-color, #phone-verification .footer, #verify-phone-root .full-background-color, #verify-phone-root .footer, #verify-email-root .full-background-color, #verify-email-root .footer, #download-my-data-root .full-background-color, #download-my-data-root .footer, #email-verification-success-root .full-background-color, #email-verification-success-root .footer {
+    background: transparent;
+}
+
+body {
+    background: transparent;
+    overflow: hidden;
+}
+
+.tiv-verifyPage {
+    background-color: transparent;
+}

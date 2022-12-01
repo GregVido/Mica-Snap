@@ -1,0 +1,16 @@
+{
+  "name": "snap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "node_modules\\.bin\\electron-rebuild"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "mica-electron": "^1.1.6"
+  }
+}
