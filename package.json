@@ -1,16 +1,28 @@
 {
   "name": "snap",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Snapchat app with mica effect.",
   "main": "app.js",
   "scripts": {
     "start": "electron .",
-    "rebuild": "node_modules\\.bin\\electron-rebuild"
+    "rebuild": "node_modules\\.bin\\electron-rebuild",
+    "pack": "electron-builder --win portable"
   },
   "keywords": [],
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
     "mica-electron": "^1.1.6"
+  },
+  "devDependencies": {
+    "electron": "21.1.0"
+  },
+  "build": {
+    "appId": "com.mica.snap",
+    "win": {
+      "asar": true,
+      "target": "nsis",
+      "icon": "icon/app.ico"
+    }
   }
 }
