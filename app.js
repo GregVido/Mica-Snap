@@ -49,11 +49,11 @@ electron.app.on('ready', () => {
         icon: path.join('icon', 'app.ico')
     });
 
-    if(!SETTING.bounds) {
+    if (!SETTING.bounds) {
         SETTING.bounds = win.getBounds();
         fs.writeFileSync(FILE_CONFIG, JSON.stringify(SETTING, null, 4));
     }
-    else 
+    else
         win.setBounds(SETTING.bounds);
 
     win.loadURL('https://web.snapchat.com/', {
@@ -66,6 +66,37 @@ electron.app.on('ready', () => {
         win.webContents.executeJavaScript(injector);
 
         win.show();
+    });
+
+    win.webContents.on('did-create-window', (window, details) => {
+        window.close();
+
+        details.options.opacity = 1;
+        details.options.autoHideMenuBar = true;
+        details.options.webPreferences = { nodeIntegration: true, contextIsolation: false };
+
+        window = new MicaBrowserWindow(details.options);
+
+        window.loadURL(details.url);
+        window.setVisualEffect(background, theme);
+
+        window.webContents.on('dom-ready', () => {
+            let injector = fs.readFileSync(path.join(__dirname, 'injector', 'index.js')).toString();
+            injector = injector.replace('CSS_CONTENT', '`' + fs.readFileSync(path.join(__dirname, 'injector', 'styles.css')).toString() + '`');
+            window.webContents.executeJavaScript(injector);
+            window.webContents.executeJavaScript('document.body.style.overflow = "auto";');
+    
+            window.show();
+        });
+    });
+
+    win.webContents.setWindowOpenHandler((details) => {
+        return {
+            action: 'allow',
+            overrideBrowserWindowOptions: {
+                opacity: 0
+            }
+        }
     });
 
     win.on('close', () => {

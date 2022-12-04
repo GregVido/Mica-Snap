@@ -2,7 +2,7 @@ const { ipcRenderer } = require('electron')
 
 const style = document.createElement('style');
 style.textContent = CSS_CONTENT;
-document.head.appendChild(style);
+document.body.appendChild(style);
 
 let light = null;
 let addPopup = false;

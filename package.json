@@ -1,15 +1,16 @@
 {
-  "name": "snap",
-  "version": "1.0.1",
+  "name": "micasnap",
+  "version": "1.0.2",
   "description": "Snapchat app with mica effect.",
   "main": "app.js",
   "scripts": {
     "start": "electron .",
     "rebuild": "node_modules\\.bin\\electron-rebuild",
-    "pack": "electron-builder --win portable"
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
   },
   "keywords": [],
-  "author": "",
+  "author": "GregVido",
   "license": "Apache-2.0",
   "dependencies": {
     "mica-electron": "^1.1.6"
@@ -17,8 +18,12 @@
   "devDependencies": {
     "electron": "21.1.0"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/GregVido/Mica-Snap.git"
+  },
   "build": {
-    "appId": "com.mica.snap",
+    "appId": "com.mica.MicaSnap",
     "win": {
       "asar": true,
       "target": "nsis",

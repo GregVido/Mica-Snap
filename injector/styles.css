@@ -16,3 +16,17 @@ body {
 .tiv-verifyPage {
     background-color: transparent;
 }
+
+.sc-header-white .header-container, .sc-header-white.header-container {
+    background-color: #ffffff1f;
+    backdrop-filter: blur(12px);
+}
+
+.globalnav-container {
+    border: none;
+}
+
+.globalnav-container .globalnav-item, .globalnav-container .globalnav-item:hover {
+    background-color: #ffffffc2;
+    backdrop-filter: blur(50px);
+}
